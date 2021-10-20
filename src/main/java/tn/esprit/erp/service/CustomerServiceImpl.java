@@ -30,31 +30,31 @@ public class CustomerServiceImpl implements ICustomerService {
 	@Override
 	public Customer addCustomer(Customer customer) {
 		// Ajouter un client
-		return customerRepository.saveAndFlush(customer);
+		return customerRepository.save(customer);
 	}
 
 	@Override
 	public void deleteCustomer(String id) {
 		// Supprimer un utilisateur
-		customerRepository.deleteById(Integer.parseInt(id));
+		customerRepository.deleteById(id);
 	}
 
 	@Override
 	public Customer updateCustomer(String id, Customer customer) {
 		// Modifier un client existant
-		if (customerRepository.findById(Integer.parseInt(id)).isPresent()) {
-			Customer customerExistant = customerRepository.findById(Integer.parseInt(id)).get();
+		if (customerRepository.findById(id).isPresent()) {
+			Customer customerExistant = customerRepository.findById(id).get();
 			customerExistant.setFirstName(customer.getFirstName());
 			customerExistant.setLastName(customer.getLastName());
 			customerExistant.setEmail(customer.getEmail());
-			return customerRepository.saveAndFlush(customerExistant);
+			return customerRepository.save(customerExistant);
 		} else return null;
 	}
 
 	@Override
 	public Customer retrieveCustomer(String id) {
 		// Retourner un client par son ID
-		return customerRepository.findById(Integer.parseInt(id)).get();
+		return customerRepository.findById(id).get();
 	}
 
 }
