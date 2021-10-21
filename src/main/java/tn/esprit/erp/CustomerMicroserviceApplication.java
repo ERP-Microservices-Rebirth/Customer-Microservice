@@ -21,7 +21,7 @@ public class CustomerMicroserviceApplication {
 		SpringApplication.run(CustomerMicroserviceApplication.class, args);
 	}
 	
-	@Bean
+	/*@Bean
 	ApplicationRunner init(CustomerRepository customerRepository) {
 		Customer customer1 = new Customer("Malek", "Ajmi", "ajmi.malek@esprit.tn");
 		Customer customer2 = new Customer("Achref", "Aguel", "achref.aguel@esprit.tn");
@@ -31,5 +31,5 @@ public class CustomerMicroserviceApplication {
 				customerRepository.save(customer);
 			});
 		};
-}
+}*/
 }
