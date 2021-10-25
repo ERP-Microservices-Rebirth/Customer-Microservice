@@ -15,7 +15,7 @@ jobs:
       with:
         java-version: 8
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -DskipTests -B package --file pom.xml
     - name: Heroku Container Registry login
       env: 
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
