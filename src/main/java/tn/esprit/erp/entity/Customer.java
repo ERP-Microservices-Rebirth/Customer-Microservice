@@ -1,5 +1,8 @@
 package tn.esprit.erp.entity;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -11,13 +14,18 @@ public class Customer {
 	private String id;
 
 	@Field(value = "first_name")
+	@NotBlank(message = "You need to enter your First Name")
 	private String firstName;
 
 	@Field(value = "last_name")
+	@NotBlank(message = "You need to enter your Last Name")
 	private String lastName;
 
+	@NotBlank(message = "You need to enter your Email Adress")
+	@Email
 	private String email;
 	
+	@NotBlank(message = "You need to specify your Sector(where are you ?)")
 	private String secteur;
 
 	public Customer() {

@@ -21,15 +21,15 @@ public class CustomerMicroserviceApplication {
 		SpringApplication.run(CustomerMicroserviceApplication.class, args);
 	}
 	
-	/*@Bean
+	@Bean
 	ApplicationRunner init(CustomerRepository customerRepository) {
-		Customer customer1 = new Customer("Malek", "Ajmi", "ajmi.malek@esprit.tn");
-		Customer customer2 = new Customer("Achref", "Aguel", "achref.aguel@esprit.tn");
-		Customer customer3 = new Customer("Malek", "Personal", "ajmimalek5@gmail.com");
+		Customer customer1 = new Customer("Malek", "Ajmi", "ajmi.malek@esprit.tn","Nouvelle Medina");
+		Customer customer2 = new Customer("Achref", "Aguel", "achref.aguel@esprit.tn", "Mahdia");
+		Customer customer3 = new Customer("Malek", "Personal", "ajmimalek5@gmail.com", "Ben Arous");
 		return args -> {
 			Stream.of(customer1, customer2, customer3).forEach(customer -> {
 				customerRepository.save(customer);
 			});
 		};
-}*/
+}
 }

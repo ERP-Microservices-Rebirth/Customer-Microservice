@@ -63,4 +63,10 @@ public class CustomerServiceImpl implements ICustomerService {
 		customerRepository.deleteAll();
 	}
 
+	@Override
+	public List<Customer> retrieveCustomersBySecteur(String secteur) {
+		// Retourner les clients par Secteur
+		return customerRepository.findBySecteur(secteur);
+	}
+
 }
