@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
 import tn.esprit.erp.entity.Customer;
 import tn.esprit.erp.service.ICustomerService;
 
@@ -74,7 +73,7 @@ public class CustomerRestController {
 	public Map<String, String> handleValidationExceptions(
 	  MethodArgumentNotValidException ex) {
 	    Map<String, String> errors = new HashMap<>();
-	    ex.getBindingResult().getAllErrors().forEach((error) -> {
+	    ex.getBindingResult().getAllErrors().forEach(error -> {
 	        String fieldName = ((FieldError) error).getField();
 	        String errorMessage = error.getDefaultMessage();
 	        errors.put(fieldName, errorMessage);
