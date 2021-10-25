@@ -36,6 +36,13 @@ public class CustomerRestController {
 	public void removeCustomer(@PathVariable("id") String id) {
 		customerService.deleteCustomer(id);
 	}
+	
+	// Supprimer tous les Clients : http://localhost:8081/api/customers
+		@DeleteMapping
+		@ResponseBody
+		public void removeAllCustomers() {
+			customerService.deleteAllCustomers();
+		}
 		
 	// Modifier Client : http://localhost:8081/api/customers/{id}
 	@PutMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
