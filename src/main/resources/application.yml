@@ -2,9 +2,9 @@ eureka:
   client:
     registerWithEureka: true
     serviceUrl:
-      defaultZone: ${EUREKA_URL:http://localhost:5000}/eureka/
+      defaultZone: https://erp-eureka.herokuapp.com/eureka/
   instance:
-    hostname: ${DOMAIN_NAME}
+    hostname: erp-eureka.herokuapp.com
     nonSecurePort: 80
 logging:
   file:
@@ -19,12 +19,12 @@ logging:
     console: '%d{yyyy-MM-dd HH:mm:ss} - %-5level - %logger{36} - %msg%n'
 server:
   port: 8081
-spring:
+spring: 
   application:
     name: customer-microservice
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
   data:
     mongodb:
-      uri: ${MONGO_URI}
+      uri: ${MONGO_URI:mongodb+srv://admin:admin@cluster1.h0jm2.mongodb.net/customer-microservice?retryWrites=true&w=majority}
   profiles: heroku

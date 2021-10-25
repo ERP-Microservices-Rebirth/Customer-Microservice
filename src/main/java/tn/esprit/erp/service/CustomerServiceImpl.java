@@ -57,4 +57,10 @@ public class CustomerServiceImpl implements ICustomerService {
 		return customerRepository.findById(id).get();
 	}
 
+	@Override
+	public void deleteAllCustomers() {
+		// Supprimer tous les clients
+		customerRepository.deleteAll();
+	}
+
 }

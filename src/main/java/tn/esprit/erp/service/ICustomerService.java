@@ -11,6 +11,7 @@ public interface ICustomerService {
 	List<Customer> retrieveAllCustomers();
 	Customer addCustomer(Customer customer);
 	void deleteCustomer(String id);
+	void deleteAllCustomers();
 	Customer updateCustomer(String id, Customer customer);
 	Customer retrieveCustomer(String id);
 }

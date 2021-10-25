@@ -17,16 +17,19 @@ public class Customer {
 	private String lastName;
 
 	private String email;
+	
+	private String secteur;
 
 	public Customer() {
 
 	}
 
-	public Customer(String firstName, String lastName, String email) {
+	public Customer(String firstName, String lastName, String email, String secteur) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
+		this.secteur = secteur;
 	}
 
 	public String getId() {
@@ -57,8 +60,17 @@ public class Customer {
 		this.email = email;
 	}
 
+	public String getSecteur() {
+		return secteur;
+	}
+
+	public void setSecteur(String secteur) {
+		this.secteur = secteur;
+	}
+
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", secteur=" + secteur + "]";
 	}
 }
