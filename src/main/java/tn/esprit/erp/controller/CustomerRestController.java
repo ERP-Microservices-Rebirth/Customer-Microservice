@@ -85,6 +85,10 @@ public class CustomerRestController {
 		
 	// Modifier Client : http://localhost:8081/api/customers/{id}
 	@PutMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@Operation(summary = "Update a customer", responses = {
+            @ApiResponse(description = "Customer updated successfully", responseCode = "200",
+                    content = @Content(mediaType = "application/json",schema = @Schema(implementation = Customer.class)))
+    })
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Customer> modifyCustomer(@PathVariable(value = "id") String id,
 			@Valid @RequestBody Customer customer) {
